@@ -1,0 +1,12 @@
+universe                       = docker
+docker_image                   = choij1589/mytorchimage:cuda12.4
+executable                     = launchHPO.sh
+jobbatchname                   = launchHPO-MHc-130_MA-90_vs_ttZ-Skim3Mu
+output                         = $(ClusterId).$(ProcId).out
+error                          = $(ClusterId).$(ProcId).err
+log                            = $(ClusterId).$(ProcId).log
+request_cpus                   = 48
+request_gpus                   = 1
++requirements                  = (TARGET.TotalCPUs == 48) && regexp("H100", TARGET.GPUs_DeviceName)
++JobFlavour                    = "nextweek"
+queue
