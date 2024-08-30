@@ -7,8 +7,7 @@ cd $WORKDIR/ParticleNet
 # Environment Setup
 source /opt/conda/bin/activate
 conda activate lxplus
-xrdcp root://eosuser.cern.ch//eos/user/c/choij/ChargedHiggsAnalysisV2/ParticleNet/archive/python.tar.gz $WORKDIR/ParticleNet
-tar xf python.tar.gz
+xrdcp -r root://eosuser.cern.ch//eos/user/c/choij/ChargedHiggsAnalysisV2/ParticleNet/archive/python.tar.gz $WORKDIR/ParticleNet
 export PATH=$PATH:$PWD/python
 export SYNETUNE_FOLDER=$PWD/syne-tune
 
